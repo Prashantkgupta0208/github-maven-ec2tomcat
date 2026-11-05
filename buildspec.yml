@@ -1,0 +1,20 @@
+
+version: 0.2
+
+phases:
+
+  install:
+    runtime-versions:
+      java: corretto17
+
+  build:
+    commands:
+      - echo Starting Maven Build
+      - mvn clean package
+      - echo Maven Build Completed
+
+artifacts:
+  files:
+    - appspec.yml
+    - scripts/**/*
+    - target/mywebsite.war
